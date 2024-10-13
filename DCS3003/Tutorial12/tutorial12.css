@@ -1,0 +1,17 @@
+p {
+text-align:left; color:white;
+font-size:200%;
+font-weight:bold;
+}
+
+font {
+font-size:300%;
+font-family:tahoma;
+color:yellow;
+font-weight:bold;
+}
+
+hr {
+border:4px solid yellow;
+width:100%;
+}
