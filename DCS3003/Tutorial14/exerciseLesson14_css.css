@@ -1,0 +1,53 @@
+/* Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+h1,p {
+    animation: slideIn 3s ease-out;
+}
+
+
+/* Gradient background */
+body {
+background: linear-gradient(to right, aqua, green);
+}
+
+/* Border */
+
+p {
+border: 2px solid black;
+padding: 10px;
+border-radius: 8px;
+}
+
+
+/* Shadow effect */
+p {
+box-shadow: 20px 10px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Hover effect */
+p {
+transition: color 0.3s ease-in-out;
+}
+p:hover {
+background-color: blue;
+transform: rotate(2deg) scale(1);
+}
+
+/* Text Shadow */
+p {
+text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
