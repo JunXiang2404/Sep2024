@@ -1,4 +1,4 @@
-/* General Reset */
+/* General Styling */
 * {
     margin: 0;
     padding: 0;
@@ -76,7 +76,7 @@ header {
     flex: 1;
     padding: 2rem;
     max-width: 600px;
-    background-color: rgba(0, 0, 0, 0.5); /* Adds overlay for text readability */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .mission-text h2 {
