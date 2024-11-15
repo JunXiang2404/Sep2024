@@ -1,87 +1,114 @@
 <html><head>
-<title>Form - Text Input</title>
-<link rel=icon href=sunflower.jpg type=image/jpg>
-<meta name=viewport content=width=device-width, initial-scale=1.0>
+<title>Table</title> 
+<link rel=icon href=logo.png type=image/png> 
+<meta name=viewport content=width=device-width, initial-scale=1.0> 
 <style>
-body {
-top-margin=50;
-color: #696969;
-font-family: verdana;
-font-size: 160%;
-text-align:center;
-width:60%; height:70%;
-}
-</style>
-</head>
-<center>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+        th, td {
+            padding: 10px;
+            border: 2px solid black;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        
+    </style>
 
-<table align=center>
+</head> 
+<body topmargin=60> 
+
+<table bgcolor=powderblue border=5  width=90% height=100% align=center> 
+
+<tr> 
+<td> 
+<table border=5 width=90% height=40% align=center> 
+<h4 align=center>Room Resservations</h4> 
 
 <tr>
-<th colspan="2">Personal details:</th>
+<td colspan="4">Personal Details</td>
 </tr>
 
 <tr>
-<td>First Name:</td>
-<td><input size=40 maxlength=5 type=text name=fname></td>
+<td style="border:none;">Full Name</td>
+<td>:<input size=40 maxlength=5 type=text name=fname></td>
+<td style="border:none;">IC No.</td>
+<td>:<input size=40 maxlength=5 type=text name=fname></td>
 </tr>
 
 <tr>
-<td>Last Name:</td>
-<td><input size=40 maxlength=5 type=text name=Iname></td>
+<td style="border:none;">Email address</td>
+<td>:<input size=40 maxlength=5 type=text name=fname></td>
+<td style="border:none;">Contact No.</td>
+<td>:<input size=40 maxlength=5 type=text name=fname></td>
+</tr>
+ 
+<table border=5 width=90% height=40% align=center> 
+<h4 align=center></h4>
+
+<tr>
+<td colspan="4">Reservation</td>
 </tr>
 
 <tr>
-<td>Gender:</td>
-<td><input type = radio name = gender value = Male> Male
-<input type = radio name = gender value = Female> Female</td>
-</tr>
-
-<tr>
-<td>Choose your favorite subjects:</td>
-<td><input type=checkbox name=fav_sub value=DCS4103>DCS4103<br>
-<input type=checkbox name=fav_sub value=DCS3003>DCS3003<br>
-<input type=checkbox name=fav_sub value=MST1003>MST1003<br>
-<input type=checkbox name=fav_sub value=MST2003>MST2003<br></td>
-</tr>
-
-<tr>
-<td>Address:</td>
-<td><textarea rows=4 cols=30 name=address></textarea></td>
-</tr>
-
-<tr>
-<td>Date of Birth:</td>
-<td><input type=date name=dob></td>
-</tr>
-
-<tr>
-<td>Login Password:</td>
-<td><input type=password name=loginpass></td>
-</tr>
-
-<tr>
-<td>Course:</td>
-<td><select>
-<option value="0">- List of Courses -</option>
+<td style="border:none;">Number of Room(s)</td>
+<td>:<select align=center>
+<option value="0">- Selection -</option>
 <option value="DCS">Diploma In Computer Science</option>
-<optgroup label="Diploma In Computer Science">
-<option value="DCS_S1">Semester 1</option>
-<option value="DCS_S2">Semester 2</option>
-<option value="DCS_S3">Semester 3</option>
-<option value="DCS_S4">Semester 4</option>
-<option value="DCS_S5">Semester 5</option>
-<option value="DCS_S6">Semester 6</option>
-</optgroup>
-<option value="DIB">Diploma In Bussiness</option>
-<option value="DAS">Diploma In Airline Services</option>
-</select></td>
+</td>
+<td style="border:none;">Payment Method</td>
+<td ><input type = radio name = gender value = Cash>Cash
+<input type = radio name = gender value = TNG> TNG
+</td>
 </tr>
 
-<tr align=center>
-<td colspan="2"><input type=submit value=Submit><input type=reset value=Reset></td>
-<td></td>
+<tr>
+<td style="border:none;">Number of Adult(s)</td>
+<td>:<select align=center>
+<option value="0">- Selection -</option>
+<option value="DCS">Diploma In Computer Science</option>
+<td style="border:none;">Do you have any special requests?</td>
+<td rowspan="5"></td>
+</td>
+
+<tr>
+<td style="border:none;">Number of Children</td>
+<td>:<select align=center>
+<option value="0">- Selection -</option>
+<option value="DCS">Diploma In Computer Science</option>
+</td>
+
+<tr>
+<td style="border:none;">Check-in Date</td>
+<td>:<input type=date name=dob></td>
+</td>
+
+<tr>
+<td style="border:none;">Check-out Date</td>
+<td>:<input type=date name=dob></td>
+
+<tr>
+<td style="border:none;">Room Prefence</td>
+<td><input type = checkbox = gender value = Cash>Deluxe
+<input type = checkbox = gender value = TNG> Suite
+</td>
 </tr>
-  
-</table>
-</center></body></html>
+
+</table> 
+<p align=center>
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+</p>
+</table> 
+
+</body></html>
