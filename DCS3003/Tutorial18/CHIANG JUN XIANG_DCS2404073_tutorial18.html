@@ -1,114 +1,114 @@
 <html><head>
-<title>Table</title> 
-<link rel=icon href=logo.png type=image/png> 
-<meta name=viewport content=width=device-width, initial-scale=1.0> 
+<title>Form - Text Input</title>
+<link rel=icon href=sunflower.jpg type=image/jpg>
+<meta name=viewport content=width=device-width, initial-scale=1.0>
 <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        table {
-            margin: 20px auto;
-            border-collapse: collapse;
-            width: 80%;
-        }
-        th, td {
-            padding: 10px;
-            border: 2px solid black;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        input[type="text"], input[type="number"] {
-            width: 100%;
-            padding: 8px;
-            margin: 5px 0;
-        
-    </style>
+body {
+font-family: verdana;
+}
 
-</head> 
-<body topmargin=60> 
+td.special {
+color: blue;
+}
 
-<table bgcolor=powderblue border=5  width=90% height=100% align=center> 
+table {
+border-width:3;
+border-collapse: collapse;
+border-style:solid;
+border-color: black;
+}
 
+td {
+font-weight: bold;
+}
+
+tr td {
+border: none;
+}
+
+</style>
+</head>
+<body topmargin=50>
+<center>
+<form>
+
+<table bgcolor=powderblue border height=90% width=60% align=center cellpadding=60%> 
+<td> <h3 align=center>Room Reservations</h3>
+
+<table border height=25% width=100% align=center cellpadding=8> 
+<tr>
+<td colsapn=4 class="special"><u> Personal details </u></td>
+</tr>
+
+<tr>		
+<td > Full Name </td>
+<td> : <input size=15 type=text name=fname></td>
+<td> IC No. </td>
+<td> : <input size=15 type=text name=fname></td>
+</tr>
+
+<tr>
+<td> Email Address </td>
+<td> : <input size=15 type=text name=fname></td>
+<td> Contact No. </td>
+<td> : <input size=15 type=text name=fname></td>
+</tr>
+
+<table border width=100% height=10% align=center style="border: none;"> 
 <tr> 
-<td> 
-<table border=5 width=90% height=40% align=center> 
-<h4 align=center>Room Resservations</h4> 
+<td style="border: none;"> </td>
+</tr>
 
+<table border height=60% width=100% align=center cellpadding=5> 
 <tr>
-<td colspan="4">Personal Details</td>
+<td colspan=4 class="special"><u> Reservations </u></td>
 </tr>
 
 <tr>
-<td style="border:none;">Full Name</td>
-<td>:<input size=40 maxlength=5 type=text name=fname></td>
-<td style="border:none;">IC No.</td>
-<td>:<input size=40 maxlength=5 type=text name=fname></td>
-</tr>
-
-<tr>
-<td style="border:none;">Email address</td>
-<td>:<input size=40 maxlength=5 type=text name=fname></td>
-<td style="border:none;">Contact No.</td>
-<td>:<input size=40 maxlength=5 type=text name=fname></td>
-</tr>
- 
-<table border=5 width=90% height=40% align=center> 
-<h4 align=center></h4>
-
-<tr>
-<td colspan="4">Reservation</td>
-</tr>
-
-<tr>
-<td style="border:none;">Number of Room(s)</td>
-<td>:<select align=center>
-<option value="0">- Selection -</option>
-<option value="DCS">Diploma In Computer Science</option>
-</td>
-<td style="border:none;">Payment Method</td>
-<td ><input type = radio name = gender value = Cash>Cash
-<input type = radio name = gender value = TNG> TNG
+<td> Number of Room(s) </td>
+<td> : <select> <option value="0">- Selection -</option> </select> </td>
+<td> Payment Method </td>
+<td>
+<input type = radio name = gender value = Male> Cash
+<input type = radio name = gender value = Female> TNG
 </td>
 </tr>
 
 <tr>
-<td style="border:none;">Number of Adult(s)</td>
-<td>:<select align=center>
-<option value="0">- Selection -</option>
-<option value="DCS">Diploma In Computer Science</option>
-<td style="border:none;">Do you have any special requests?</td>
-<td rowspan="5"></td>
-</td>
+<td> Number of Adult(s) </td>
+<td> : <select> <option value="0">- Selection -</option> </select> </td>
+<td rowspan=2> Do you have any <br> special requests? </td>
+<td rowspan=5> <textarea rows=9 cols=20
+name=address></textarea> </td>
+</tr>
 
 <tr>
-<td style="border:none;">Number of Children</td>
-<td>:<select align=center>
-<option value="0">- Selection -</option>
-<option value="DCS">Diploma In Computer Science</option>
-</td>
+<td> Number of Children </td>
+<td> : <select> <option value="0">- Selection -</option> </select> </td>
+</tr>
 
 <tr>
-<td style="border:none;">Check-in Date</td>
-<td>:<input type=date name=dob></td>
-</td>
+<td> Check-in Date </td>
+<td> : <input type=date></td>
+</tr>
 
 <tr>
-<td style="border:none;">Check-out Date</td>
-<td>:<input type=date name=dob></td>
+<td> Check-out Date </td>
+<td> : <input type=date></td>
+</tr>
 
 <tr>
-<td style="border:none;">Room Prefence</td>
-<td><input type = checkbox = gender value = Cash>Deluxe
-<input type = checkbox = gender value = TNG> Suite
+<td> Room Preference </td>
+<td> <input type=checkbox name=> Deluxe 
+<input type=checkbox name=> Suite
 </td>
 </tr>
 
-</table> 
-<p align=center>
-<input type="submit" value="Submit">
-<input type="reset" value="Reset">
-</p>
-</table> 
+<table border height=20% width=100% align=center style="border: none;"> 
+<tr align=center>
+<td style="border: none;"><input type=submit value=Submit><input type=reset value=Reset></td>
+</tr>
 
-</body></html>
+</form>
+</table>
+</center></body></html>
