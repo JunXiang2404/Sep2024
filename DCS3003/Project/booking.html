@@ -1,0 +1,202 @@
+<html>
+<head>
+    <title>GoTour - Booking Form </title>
+<link rel="icon" href="icon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="booking.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tourPackage = document.getElementById('tour-package');
+            const startDate = document.getElementById('start-date');
+            const endDate = document.getElementById('end-date');
+            const totalAmount = document.getElementById('total-amount');
+            const travelersInput = document.getElementById('travelers');
+            const bookingForm = document.querySelector('.booking-form');
+
+            // Define package durations (in days)
+            const packageDurations = {
+                "4500": 5, // 	Paris Adventure
+                "3800": 7, // Bali Beach Retreat
+                "5200": 6, // Kyoto Culture Exploration
+                "4000": 4, // Santorini Sunset Escape
+                "6000": 6, // Machu Picchu Trek
+                "4500": 5, // Cape Town Adventure
+            };
+
+            // Calculate the amount
+            function calculateAmount() {
+                const packagePrice = parseFloat(tourPackage.value) || 0;
+                const numTravelers = parseInt(travelersInput.value) || 1;
+                totalAmount.value = (packagePrice * numTravelers).toLocaleString('en-MY', {
+                    style: 'currency',
+                    currency: 'MYR',
+                });
+            }
+
+            // Update end date based on selected start date and tour package
+            function updateEndDate() {
+                const startDateValue = startDate.value;
+                const selectedPackage = tourPackage.value;
+
+                if (startDateValue && selectedPackage) {
+                    const duration = packageDurations[selectedPackage];
+
+                    if (duration) {
+                        const start = new Date(startDateValue);
+                        start.setDate(start.getDate() + duration - 1); // Add the duration to the start date
+                        endDate.value = start.toISOString().split('T')[0]; // Set the end date
+                    }
+                }
+            }
+
+            // Event listeners
+            tourPackage.addEventListener('change', function() {
+                calculateAmount(); // Recalculate amount when package changes
+                updateEndDate(); // Update the end date when package changes
+            });
+
+            startDate.addEventListener('change', updateEndDate); // Update end date when start date changes
+            travelersInput.addEventListener('input', calculateAmount); // Recalculate total when number of travelers changes
+
+            calculateAmount();
+
+            // Show success message after form submission
+            function showSuccessMessage(event) {
+                event.preventDefault(); // Prevent form submission
+                alert("Booking Successfully Submitted!"); // Show the success message
+                bookingForm.reset(); // Reset the form after submission
+            }
+
+            // Add event listener for form submission
+            bookingForm.addEventListener('submit', showSuccessMessage);
+        });
+    </script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo" width="100">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="packages.html">Tour and Packages</a></li>
+                <li><a href="booking.html">Booking Form</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Booking Form Section -->
+    <section class="booking-form-section">
+        <h2>Book Your Adventure</h2>
+        <form class="booking-form">
+            <!-- Personal Information -->
+            <div class="form-group">
+                <label for="full-name">Full Name<span class="required">*</span></label>
+                <input type=text id="full-name" name=full_name required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address<span class="required">*</span></label>
+                <input type=email id="email" name=email required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number<span class="required">*</span></label>
+                <input type=text id="phone" name=phone required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address<span class="required">*</span></label>
+                <textarea rows=3 id="address" name=address required></textarea>
+            </div>
+
+            <!-- Tour Selection -->
+            <div class="form-group">
+                <label for="tour-package">Select Tour Package<span class="required">*</span></label>
+                <select id="tour-package" name="tour_package" required>
+                    <option value="" disabled selected>Select a package</option>
+                    <option value="4500">Paris Adventure - MYR 4,500 ---- (5 days)</option>
+                    <option value="3800">Bali Beach Retreat - MYR 3,800 ---- (7 days)</option>
+                    <option value="5200">Kyoto Culture Exploration - MYR 5,200 ---- (6 days)</option>
+                    <option value="4000">Santorini Sunset Escape - MYR 4,000 ---- (4 days)</option>
+                    <option value="6000">Machu Picchu Trek - MYR 6,000 ---- (6 days)</option>
+                    <option value="4500">Cape Town Adventure - MYR 4,500 ---- (5 days)</option>
+                </select>
+            </div>
+
+            <!-- Travel Dates -->
+            <div class="form-group">
+                <label for="start-date">Start Date<span class="required">*</span></label>
+                <input type="date" id="start-date" name="start_date" required>
+            </div>
+            <div class="form-group">
+                <label for="end-date">End Date<span class="required">*</span></label>
+                <input type="date" id="end-date" name="end_date" required readonly>
+            </div>
+
+            <!-- Number of Travelers -->
+            <div class="form-group">
+                <label for="travelers">Number of Travelers<span class="required">*</span></label>
+                <input type="number" id="travelers" name="travelers" min="1" max="20" value="1" required>
+            </div>
+
+            <!-- Total Amount -->
+            <div class="form-group">
+                <label for="total-amount">Total Amount (MYR)</label>
+                <input type="text" id="total-amount" name="total_amount" readonly>
+            </div>
+
+              <!-- Payment Method -->
+	<div class="form-group">
+            <label for="payment-method">Payment Method <span class="required">*</span></label>
+    	    <select id="payment-method" name="payment-method" required>
+                <option value="" disabled selected> Select Payment Method </option>
+                <option value="online-bank"> Online Banking (FPX) </option>
+                <option value="ewallet"> Touch 'n Go eWallet </option>
+                <option value="credit-debit"> Credit and Debit Cards </option>
+    	    </select>
+	</div>
+
+            <!-- Special Requests -->
+            <div class="form-group">
+                <label for="requests">Special Requests</label>
+                <textarea id="requests" name="requests" rows="3"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button class="submit-button">Submit Booking</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+<footer>
+    <div class="footer-container">
+        <div class="address-info">
+            <h3>ADDRESS INFO</h3>
+            <p>Crescendo International College</p>
+            <p>Jln Lbh Cemerlang,<br> Taman Desa Cemerlang,<br> 81800 Ulu Tiram,Johor</p>
+        </div>
+        <div class="footer-links">
+            <h3>QUICK LINKS</h3>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="social-icons">
+            <h3>FOLLOW US</h3>
+            <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="ig.png" alt="Instagram"></a>
+            <a href="https://www.youtube.com/" target="_blank"><img src="yt.png" alt="YouTube"></a>
+            <a href="https://www.tiktok.com/" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
+        </div>
+    </div>
+    <p>&copy; Copyright 2024 | Designed by Jun Xiang</p>
+</footer>
+
+</body>
+</html>
